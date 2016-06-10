@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata minClientVersion="2.8.1">
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>Enner Pérez</owners>
+    <licenseUrl>http://www.codeproject.com/info/cpol10.aspx</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/ennerperez/alphagradientpanel/master/.editoricon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This is a panel, first of all. Therefore, it has all the advantages of a panel, plus some nice little features.</description>
+    <summary>$description$</summary>
+    <releaseNotes />
+    <copyright>$copyright$</copyright>
+    <language>en</language>
+    <tags>WinForms Aplha Gradient Borders Transparency Panel</tags>
+    <dependencies />
+  </metadata>
+  <files />
+</package>

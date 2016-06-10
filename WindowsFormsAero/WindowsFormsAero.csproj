@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FE23CCE-FBAE-4FB5-854D-2E55D1FE6252}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsAero</RootNamespace>
+    <AssemblyName>WindowsFormsAero</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\.files\AssemblyInfo.Shared.cs">
+      <Link>Properties\AssemblyInfo.Shared.cs</Link>
+    </Compile>
+    <Compile Include="AeroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommandLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\SearchTextBoxDesigner.cs" />
+    <Compile Include="DWM\DWMCompositionException.cs" />
+    <Compile Include="DWM\DWMManager.cs" />
+    <Compile Include="DWM\Flip3dPolicy.cs" />
+    <Compile Include="DWM\GlassHelper.cs" />
+    <Compile Include="DWM\Helpers\GlassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DWM\Margins.cs" />
+    <Compile Include="DWM\NativeMethods.cs" />
+    <Compile Include="DWM\Thumbnail.cs" />
+    <Compile Include="DWM\ThumbnailViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HorizontalPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LabeledDivider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Native\Bitmap.cs" />
+    <Compile Include="Native\GDI.cs" />
+    <Compile Include="Native\IntHelpers.cs" />
+    <Compile Include="Native\Messaging.cs" />
+    <Compile Include="Native\POINT.cs" />
+    <Compile Include="Native\RECT.cs" />
+    <Compile Include="Native\Windows.cs" />
+    <Compile Include="Native\WindowStyle.cs" />
+    <Compile Include="Native\WindowTheme.cs" />
+    <Compile Include="OSSupport.cs" />
+    <Compile Include="Progressbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ExceptionMessages.Designer.cs" />
+    <Compile Include="Resources\Pictures.Designer.cs" />
+    <Compile Include="SearchTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SearchTextBox.Designer.cs">
+      <DependentUpon>SearchTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TaskDialog\CustomButton.cs" />
+    <Compile Include="TaskDialog\EventArgs.cs" />
+    <Compile Include="TaskDialog\Message.cs" />
+    <Compile Include="TaskDialog\NativeMethods.cs" />
+    <Compile Include="TaskDialog\Results.cs" />
+    <Compile Include="TaskDialog\TaskDialog.cs" />
+    <Compile Include="TaskDialog\TaskDialogButton.cs" />
+    <Compile Include="TaskDialog\TaskDialogIcon.cs" />
+    <Compile Include="TaskDialog\TaskDialog_static.cs" />
+    <Compile Include="TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThemeText\NativeMethods.cs" />
+    <Compile Include="ThemeText\Options\BorderOption.cs" />
+    <Compile Include="ThemeText\Options\GlowOption.cs" />
+    <Compile Include="ThemeText\Options\IThemeTextOption.cs" />
+    <Compile Include="ThemeText\Options\OverlayOption.cs" />
+    <Compile Include="ThemeText\Options\ShadowOption.cs" />
+    <Compile Include="ThemeText\ThemedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThemeText\ThemedText.cs" />
+    <Compile Include="ThemeText\ThemedTextCreate.cs" />
+    <Compile Include="TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VerticalPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Wizard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Package.nuspec" />
+    <None Include="Resources\ThemedLabel.pdn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\active_search.png" />
+    <Content Include="Resources\inactive_search.png" />
+    <Content Include="Resources\ThemedLabel.bmp" />
+    <Content Include="Resources\ThemedLabel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ExceptionMessages.resx" />
+    <EmbeddedResource Include="Resources\Pictures.resx" />
+    <EmbeddedResource Include="SearchTextBox.resx">
+      <DependentUpon>SearchTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
