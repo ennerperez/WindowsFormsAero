@@ -36,6 +36,9 @@
   <PropertyGroup>
     <ApplicationManifest>WindowsFormsAero.exe.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>..\WindowsFormsAero.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -126,6 +129,11 @@
       <Project>{8fe23cce-fbae-4fb5-854d-2e55d1fe6252}</Project>
       <Name>WindowsFormsAero</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\WindowsFormsAero.ico">
+      <Link>WindowsFormsAero.ico</Link>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

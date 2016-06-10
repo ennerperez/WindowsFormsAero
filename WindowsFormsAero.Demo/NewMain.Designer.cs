@@ -218,6 +218,7 @@ namespace VistaControlsApp
             this.searchTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchTextBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.searchTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.searchTextBox1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.searchTextBox1.InactiveFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.searchTextBox1.InactiveText = "Search tabs...";
@@ -232,8 +233,8 @@ namespace VistaControlsApp
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -386,7 +387,7 @@ namespace VistaControlsApp
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(657, 329);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(685, 327);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // progressBar1
@@ -449,7 +450,7 @@ namespace VistaControlsApp
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(663, 335);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(691, 333);
             this.flowLayoutPanel4.TabIndex = 0;
             // 
             // button2
@@ -576,7 +577,7 @@ namespace VistaControlsApp
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(657, 327);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(685, 327);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // textBox1
@@ -590,7 +591,7 @@ namespace VistaControlsApp
             // textBox2
             // 
             this.textBox2.CueBannerText = "Cue banner (w/focus)";
-            this.textBox2.Location = new System.Drawing.Point(3, 29);
+            this.textBox2.Location = new System.Drawing.Point(3, 32);
             this.textBox2.Name = "textBox2";
             this.textBox2.ShowCueFocused = true;
             this.textBox2.Size = new System.Drawing.Size(228, 23);
@@ -608,7 +609,7 @@ namespace VistaControlsApp
             "3",
             "4",
             "5"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 55);
+            this.comboBox1.Location = new System.Drawing.Point(3, 61);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(228, 23);
             this.comboBox1.TabIndex = 2;
@@ -621,7 +622,7 @@ namespace VistaControlsApp
             this.searchTextBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchTextBox2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.searchTextBox2.InactiveFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic);
-            this.searchTextBox2.Location = new System.Drawing.Point(3, 82);
+            this.searchTextBox2.Location = new System.Drawing.Point(3, 90);
             this.searchTextBox2.Name = "searchTextBox2";
             this.searchTextBox2.Size = new System.Drawing.Size(228, 23);
             this.searchTextBox2.TabIndex = 3;
@@ -820,6 +821,7 @@ namespace VistaControlsApp
             this.Controls.Add(this.themedLabel1);
             this.GlassEnabled = true;
             this.HideTitle = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(686, 400);

@@ -32,7 +32,6 @@ See the [changelog](CHANGELOG.md) for changes.
 
 ### Introduction
 The current version contains several native Vista controls (such as Buttons, Combo boxes with cue banner, Command links, native List views, Progress bars, explorer-like TreeView...) and some modules that empower the user to exploit some of Vista's advanced GUI features (Glass sheet effect, text on glass, live thumbnails and the new Task dialogs).
-The intellisense documentation file is now available as well.
 
 ### Features 
 - Controls

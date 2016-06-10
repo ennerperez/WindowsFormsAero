@@ -9,12 +9,14 @@
     <licenseUrl>http://www.codeproject.com/info/cpol10.aspx</licenseUrl>
     <iconUrl>https://raw.githubusercontent.com/ennerperez/alphagradientpanel/master/.editoricon.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>This is a panel, first of all. Therefore, it has all the advantages of a panel, plus some nice little features.</description>
+    <description>Provides controls reproducing the appearance of Microsoft Aero graphic objects, like buttons and links with shield icon, textboxes with cue banner, etc.</description>
     <summary>$description$</summary>
-    <releaseNotes />
+    <releaseNotes>
+      The current version contains several native Vista controls (such as Buttons, Combo boxes with cue banner, Command links, native List views, Progress bars, explorer-like TreeView...) and some modules that empower the user to exploit some of Vista's advanced GUI features (Glass sheet effect, text on glass, live thumbnails and the new Task dialogs).
+    </releaseNotes>
     <copyright>$copyright$</copyright>
     <language>en</language>
-    <tags>WinForms Aplha Gradient Borders Transparency Panel</tags>
+    <tags>WinForms Microsoft Aero Windows Control Library</tags>
     <dependencies />
   </metadata>
   <files />
