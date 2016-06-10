@@ -12,11 +12,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsAero.ThemeText.Options {
+namespace WindowsFormsAero.ThemeText.Options
+{
     /// <summary>
     /// Applies a glow on the themed text.
     /// </summary>
-	public class GlowOption : IThemeTextOption {
+	public class GlowOption : IThemeTextOption
+    {
 
         /// <summary>
         /// Default glow size.
@@ -37,22 +39,24 @@ namespace WindowsFormsAero.ThemeText.Options {
         /// Instantiates a new glow effect for themed text.
         /// </summary>
         /// <param name="size">Size of the glow effect.</param>
-		public GlowOption(int size) {
-			Size = size;
-		}
+		public GlowOption(int size)
+        {
+            Size = size;
+        }
 
         /// <summary>
         /// Gets or sets the size of the glow effect.
         /// </summary>
 		public int Size { get; set; }
 
-		#region IThemeTextOption Members
+        #region IThemeTextOption Members
 
-        internal override void Apply(ref NativeMethods.DTTOPTS options) {
-			options.dwFlags |= NativeMethods.DTTOPSFlags.DTT_GLOWSIZE;
-			options.iGlowSize = Size;
-		}
+        internal override void Apply(ref NativeMethods.DTTOPTS options)
+        {
+            options.dwFlags |= NativeMethods.DTTOPSFlags.DTT_GLOWSIZE;
+            options.iGlowSize = Size;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

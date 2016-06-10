@@ -13,9 +13,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace WindowsFormsAero.TaskDialog {
+namespace WindowsFormsAero.TaskDialog
+{
 
-    internal class NativeMethods {
+    internal class NativeMethods
+    {
 
         /// <summary>Direct Task Dialog call.</summary>
         [DllImport("comctl32.dll", CharSet = CharSet.Unicode, EntryPoint = "TaskDialog")]
@@ -24,7 +26,7 @@ namespace WindowsFormsAero.TaskDialog {
             int dwCommonButtons, IntPtr pszIcon, out int pnButton);
 
         /// <summary>Indirect Task Dialog call. Allows complex dialogs with interaction logic (via callback).</summary>
-        [DllImport("comctl32.dll", CharSet = CharSet.Unicode, PreserveSig=false)]
+        [DllImport("comctl32.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
         internal static extern IntPtr TaskDialogIndirect(ref TaskDialogConfig pTaskConfig,
             out int pnButton, out int pnRadioButton, out bool pfVerificationFlagChecked);
 
@@ -32,7 +34,8 @@ namespace WindowsFormsAero.TaskDialog {
 
         /// <summary>The Task Dialog config structure.</summary>
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 1)]
-        internal struct TaskDialogConfig {
+        internal struct TaskDialogConfig
+        {
             internal uint cbSize;
             internal IntPtr hwndParent;
             internal IntPtr hInstance;
@@ -70,7 +73,8 @@ namespace WindowsFormsAero.TaskDialog {
         /// <summary>Flags used in TaskDialogConfig struct.</summary>
         /// <remarks>From CommCtrl.h.</remarks>
         [Flags]
-        internal enum TaskDialogFlags {
+        internal enum TaskDialogFlags
+        {
             TDF_ENABLE_HYPERLINKS = 0x0001,
             TDF_USE_HICON_MAIN = 0x0002,
             TDF_USE_HICON_FOOTER = 0x0004,
@@ -91,7 +95,8 @@ namespace WindowsFormsAero.TaskDialog {
 
         /// <summary>Notifications returned by Task Dialogs to the callback.</summary>
         /// <remarks>From CommCtrl.h.</remarks>
-        internal enum TaskDialogNotification : uint {
+        internal enum TaskDialogNotification : uint
+        {
             TDN_CREATED = 0,
             TDN_NAVIGATED = 1,
             TDN_BUTTON_CLICKED = 2,            // wParam = Button ID
@@ -107,7 +112,8 @@ namespace WindowsFormsAero.TaskDialog {
 
         /// <summary>Messages that can be sent to Task Dialogs.</summary>
         /// <remarks>From CommCtrl.h.</remarks>
-        internal enum TaskDialogMessages : uint {
+        internal enum TaskDialogMessages : uint
+        {
             TDM_NAVIGATE_PAGE = 0x0400 + 101,
             TDM_CLICK_BUTTON = 0x0400 + 102, // wParam = Button ID
             TDM_SET_MARQUEE_PROGRESS_BAR = 0x0400 + 103, // wParam = 0 (nonMarque) wParam != 0 (Marquee)

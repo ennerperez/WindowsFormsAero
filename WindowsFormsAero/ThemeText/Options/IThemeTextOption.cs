@@ -12,10 +12,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsAero.ThemeText.Options {
-	public abstract class IThemeTextOption {
+namespace WindowsFormsAero.ThemeText.Options
+{
+    public abstract class IThemeTextOption
+    {
 
-		internal abstract void Apply(ref NativeMethods.DTTOPTS options);
+        internal abstract void Apply(ref NativeMethods.DTTOPTS options);
 
-	}
+    }
 }

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsAero.Dwm {
-    
+namespace WindowsFormsAero.Dwm
+{
+
     /// <summary>
     /// Determines a window's Flip 3D policy.
     /// </summary>
-    public enum Flip3DPolicy : int {
+    public enum Flip3DPolicy : int
+    {
         /// <summary>
         /// Default Flip 3D behavior.
         /// </summary>

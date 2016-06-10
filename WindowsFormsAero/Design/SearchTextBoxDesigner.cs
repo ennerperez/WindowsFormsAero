@@ -18,74 +18,74 @@ using System.Windows.Forms.Design;
 
 namespace WindowsFormsAero.Design
 {
-	internal class SearchTextBoxDesigner : ControlDesigner
-	{
-		public SearchTextBoxDesigner()
-		{
-			base.AutoResizeHandles = false;
-		}
+    internal class SearchTextBoxDesigner : ControlDesigner
+    {
+        public SearchTextBoxDesigner()
+        {
+            base.AutoResizeHandles = false;
+        }
 
-		public override void InitializeNewComponent(IDictionary defaultValues)
-		{
-			base.InitializeNewComponent(defaultValues);
-			PropertyDescriptor textProperty = TypeDescriptor.GetProperties(base.Component)["Text"];
-			if ((textProperty != null && textProperty.PropertyType == typeof(string)) && (!textProperty.IsReadOnly && textProperty.IsBrowsable))
-				textProperty.SetValue(base.Component, String.Empty);
+        public override void InitializeNewComponent(IDictionary defaultValues)
+        {
+            base.InitializeNewComponent(defaultValues);
+            PropertyDescriptor textProperty = TypeDescriptor.GetProperties(base.Component)["Text"];
+            if ((textProperty != null && textProperty.PropertyType == typeof(string)) && (!textProperty.IsReadOnly && textProperty.IsBrowsable))
+                textProperty.SetValue(base.Component, String.Empty);
 
-			PropertyDescriptor cursorProperty = TypeDescriptor.GetProperties(base.Component)["Cursor"];
-			if (cursorProperty != null && cursorProperty.PropertyType == typeof(Cursor))
-				cursorProperty.SetValue(base.Component, Cursors.IBeam);
+            PropertyDescriptor cursorProperty = TypeDescriptor.GetProperties(base.Component)["Cursor"];
+            if (cursorProperty != null && cursorProperty.PropertyType == typeof(Cursor))
+                cursorProperty.SetValue(base.Component, Cursors.IBeam);
 
-			PropertyDescriptor borderStyleProperty = TypeDescriptor.GetProperties(base.Component)["BorderStyle"];
-			if (borderStyleProperty != null && borderStyleProperty.PropertyType == typeof(BorderStyle))
-				borderStyleProperty.SetValue(base.Component, BorderStyle.FixedSingle);
-		}
-		
-		protected override void PreFilterProperties(IDictionary properties)
-		{
-			base.PreFilterProperties(properties);
-			string[] textArray = new string[] { "Text" };
-			Attribute[] attributes = new Attribute[0];
-			for (int i = 0; i < textArray.Length; i++)
-			{
-				PropertyDescriptor oldPropertyDescriptor = (PropertyDescriptor)properties[textArray[i]];
-				if (oldPropertyDescriptor != null)
-				{
-					properties[textArray[i]] = TypeDescriptor.CreateProperty(typeof(SearchTextBoxDesigner), oldPropertyDescriptor, attributes);
-				}
-			}
-		}
+            PropertyDescriptor borderStyleProperty = TypeDescriptor.GetProperties(base.Component)["BorderStyle"];
+            if (borderStyleProperty != null && borderStyleProperty.PropertyType == typeof(BorderStyle))
+                borderStyleProperty.SetValue(base.Component, BorderStyle.FixedSingle);
+        }
 
-		private void ResetText()
-		{
-			this.Control.Text = String.Empty;
-		}
+        protected override void PreFilterProperties(IDictionary properties)
+        {
+            base.PreFilterProperties(properties);
+            string[] textArray = new string[] { "Text" };
+            Attribute[] attributes = new Attribute[0];
+            for (int i = 0; i < textArray.Length; i++)
+            {
+                PropertyDescriptor oldPropertyDescriptor = (PropertyDescriptor)properties[textArray[i]];
+                if (oldPropertyDescriptor != null)
+                {
+                    properties[textArray[i]] = TypeDescriptor.CreateProperty(typeof(SearchTextBoxDesigner), oldPropertyDescriptor, attributes);
+                }
+            }
+        }
 
-		private bool ShouldSerializeText()
-		{
-			return TypeDescriptor.GetProperties(typeof(SearchTextBox))["Text"].ShouldSerializeValue(base.Component);
-		}
+        private void ResetText()
+        {
+            this.Control.Text = String.Empty;
+        }
 
-		// Properties
-		public override SelectionRules SelectionRules
-		{
-			get
-			{
-				return base.SelectionRules & ~(SelectionRules.BottomSizeable | SelectionRules.TopSizeable);
-			}
-		}
+        private bool ShouldSerializeText()
+        {
+            return TypeDescriptor.GetProperties(typeof(SearchTextBox))["Text"].ShouldSerializeValue(base.Component);
+        }
 
-		private string Text
-		{
-			get
-			{
-				return this.Control.Text;
-			}
-			set
-			{
-				this.Control.Text = value;
-				((SearchTextBox)this.Control).Select();
-			}
-		}
-	}
+        // Properties
+        public override SelectionRules SelectionRules
+        {
+            get
+            {
+                return base.SelectionRules & ~(SelectionRules.BottomSizeable | SelectionRules.TopSizeable);
+            }
+        }
+
+        private string Text
+        {
+            get
+            {
+                return this.Control.Text;
+            }
+            set
+            {
+                this.Control.Text = value;
+                ((SearchTextBox)this.Control).Select();
+            }
+        }
+    }
 }

@@ -15,12 +15,12 @@ namespace VistaControlsApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-			//Compatibility check
-			if (!WindowsFormsAero.OsSupport.IsVistaOrBetter)
-				if (MessageBox.Show("It appears you are not running on Windows Vista. The controls and dialogs implemented in this application might not work or crash.\n\nDo you want to continue?", "Windows Vista required", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
-					return;
+            //Compatibility check
+            if (!WindowsFormsAero.OsSupport.IsVistaOrBetter)
+                if (MessageBox.Show("It appears you are not running on Windows Vista. The controls and dialogs implemented in this application might not work or crash.\n\nDo you want to continue?", "Windows Vista required", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
+                    return;
 
-            Application.Run(new Main());
+            Application.Run(new NewMain());
         }
     }
 }

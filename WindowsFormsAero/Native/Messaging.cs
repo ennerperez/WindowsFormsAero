@@ -13,15 +13,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace WindowsFormsAero.Native {
-	internal static class Messaging {
+namespace WindowsFormsAero.Native
+{
+    internal static class Messaging
+    {
 
-		[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
-		internal static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        internal static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
 
-		[return: MarshalAs(UnmanagedType.Bool)]
-		[DllImport("user32.dll", SetLastError = false)]
-		internal static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+        [return: MarshalAs(UnmanagedType.Bool)]
+        [DllImport("user32.dll", SetLastError = false)]
+        internal static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
 
         internal const int WM_NCHITTEST = 0x84;
         internal const int WM_NCLBUTTONUP = 0x00A2;
@@ -31,5 +33,5 @@ namespace WindowsFormsAero.Native {
         internal const int HTCAPTION = 2;
         internal const int HTCLIENT = 1;
 
-	}
+    }
 }

@@ -10,32 +10,38 @@
 
 using System;
 
-namespace WindowsFormsAero {
-	
-	/// <summary>
-	/// Static class providing information about the current support for Vista-only features.
-	/// </summary>
-	public static class OsSupport {
+namespace WindowsFormsAero
+{
 
-		const int VistaMajorVersion = 6;
+    /// <summary>
+    /// Static class providing information about the current support for Vista-only features.
+    /// </summary>
+    public static class OsSupport
+    {
+
+        const int VistaMajorVersion = 6;
         const int SevenMinorVersion = 1;
         const int EightMinorVersion = 2;
 
-		/// <summary>
+        /// <summary>
         /// Gets whether the running operating system is Windows Vista or a more recent version.
         /// </summary>
-		public static bool IsVistaOrBetter {
-			get {
-				return (Environment.OSVersion.Platform == PlatformID.Win32NT &&
-					Environment.OSVersion.Version.Major >= VistaMajorVersion);
-			}
-		}
+        public static bool IsVistaOrBetter
+        {
+            get
+            {
+                return (Environment.OSVersion.Platform == PlatformID.Win32NT &&
+                    Environment.OSVersion.Version.Major >= VistaMajorVersion);
+            }
+        }
 
         /// <summary>
         /// Gets whether the running operating system is Windows Seven or a more recent version.
         /// </summary>
-        public static bool IsSevenOrBetter {
-            get {
+        public static bool IsSevenOrBetter
+        {
+            get
+            {
                 if (Environment.OSVersion.Platform != PlatformID.Win32NT)
                     return false;
 
@@ -53,8 +59,10 @@ namespace WindowsFormsAero {
         /// <summary>
         /// Gets whether the running operating system is Windows 8 or a more recent version.
         /// </summary>
-        public static bool IsEightOrBetter {
-            get {
+        public static bool IsEightOrBetter
+        {
+            get
+            {
                 if (Environment.OSVersion.Platform != PlatformID.Win32NT)
                     return false;
 
@@ -69,21 +77,25 @@ namespace WindowsFormsAero {
             }
         }
 
-		/// <summary>Is true if the DWM composition engine is currently enabled.</summary>
-		public static bool IsCompositionEnabled {
-			get {
-				try {
-					bool enabled;
-					Dwm.NativeMethods.DwmIsCompositionEnabled(out enabled);
+        /// <summary>Is true if the DWM composition engine is currently enabled.</summary>
+        public static bool IsCompositionEnabled
+        {
+            get
+            {
+                try
+                {
+                    bool enabled;
+                    Dwm.NativeMethods.DwmIsCompositionEnabled(out enabled);
 
-					return enabled;
-				}
-				catch (Exception) {
-					return false;
-				}
-			}
-		}
+                    return enabled;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
 
-	}
+    }
 
 }

@@ -12,10 +12,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsAero.TaskDialog {
+namespace WindowsFormsAero.TaskDialog
+{
     /// <summary>Common Task Dialog buttons. OK is the default button.</summary>
     [Flags]
-    public enum TaskDialogButton : int {
+    public enum TaskDialogButton : int
+    {
         OK = 0x0001,
         Cancel = 0x0008,
         Yes = 0x0002,

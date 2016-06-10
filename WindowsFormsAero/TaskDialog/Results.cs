@@ -12,11 +12,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsAero.TaskDialog {
+namespace WindowsFormsAero.TaskDialog
+{
 
     /// <summary>Class that aggregates the results of an "indirect" Task Dialog.</summary>
-    public class Results {
-        public Results(int buttonId, int radioId, bool selVerification) {
+    public class Results
+    {
+        public Results(int buttonId, int radioId, bool selVerification)
+        {
             ButtonID = buttonId;
             RadioID = radioId;
             IsVerificationChecked = selVerification;
@@ -26,8 +29,10 @@ namespace WindowsFormsAero.TaskDialog {
         public int RadioID { get; set; }
         public bool IsVerificationChecked { get; set; }
 
-        public Result CommonButton {
-            get {
+        public Result CommonButton
+        {
+            get
+            {
                 if (ButtonID > 0 && ButtonID <= 8)
                     return (Result)ButtonID;
                 else
@@ -37,16 +42,17 @@ namespace WindowsFormsAero.TaskDialog {
     }
 
     /// <summary>Results returned by Task Dialogs when closed by the user.</summary>
-    public enum Result : int {
-		None = 0,
-		OK = 1,
-		Cancel = 2,
-		Abort = 3,
-		Retry = 4,
-		Ignore = 5,
-		Yes = 6,
-		No = 7,
-		Close = 8
+    public enum Result : int
+    {
+        None = 0,
+        OK = 1,
+        Cancel = 2,
+        Abort = 3,
+        Retry = 4,
+        Ignore = 5,
+        Yes = 6,
+        No = 7,
+        Close = 8
     }
 
 }

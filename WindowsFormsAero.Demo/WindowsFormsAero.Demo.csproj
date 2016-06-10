@@ -7,8 +7,8 @@
     <ProjectGuid>{2BDDEEEE-8913-43D4-9600-AB54AD76C11A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsFormsAero.Demo</RootNamespace>
-    <AssemblyName>WindowsFormsAero.Demo</AssemblyName>
+    <RootNamespace>WindowsFormsAeroDemo</RootNamespace>
+    <AssemblyName>WindowsFormsAeroDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,7 +34,7 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationManifest>WindowsFormsAero.Demo.exe.manifest</ApplicationManifest>
+    <ApplicationManifest>WindowsFormsAero.exe.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -104,6 +104,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ThumbnailedWindow.resx">
       <DependentUpon>ThumbnailedWindow.cs</DependentUpon>
@@ -118,7 +119,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="WindowsFormsAero.Demo.exe.manifest" />
+    <None Include="WindowsFormsAero.exe.manifest" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WindowsFormsAero\WindowsFormsAero.csproj">

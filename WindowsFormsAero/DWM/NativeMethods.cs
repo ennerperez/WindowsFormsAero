@@ -22,7 +22,8 @@ namespace WindowsFormsAero.Dwm
         #region DWM Thumbnail methods
 
         [Flags()]
-        internal enum DwmThumbnailFlags {
+        internal enum DwmThumbnailFlags
+        {
             RectDestination = 0x1,
             RectSource = 0x2,
             Opacity = 0x4,
@@ -30,7 +31,8 @@ namespace WindowsFormsAero.Dwm
             SourceClientAreaOnly = 0x10
         }
 
-        internal struct DwmThumbnailProperties {
+        internal struct DwmThumbnailProperties
+        {
             internal DwmThumbnailFlags dwFlags;
             internal Native.RECT rcDestination;
             internal Native.RECT rcSource;
@@ -41,15 +43,17 @@ namespace WindowsFormsAero.Dwm
             internal bool fSourceClientAreaOnly;
         }
 
-		[StructLayout(LayoutKind.Sequential)]
-		internal struct DwmSize {
-			internal int Width;
-			internal int Height;
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct DwmSize
+        {
+            internal int Width;
+            internal int Height;
 
-			internal Size ToSize(){
-				return new Size(Width, Height);
-			}
-		}
+            internal Size ToSize()
+            {
+                return new Size(Width, Height);
+            }
+        }
 
 
 
@@ -65,22 +69,24 @@ namespace WindowsFormsAero.Dwm
         [DllImport("dwmapi.dll")]
         internal static extern int DwmIsCompositionEnabled([MarshalAs(UnmanagedType.Bool)] out bool pfEnabled);
 
-		[DllImport("dwmapi.dll")]
-		internal static extern int DwmQueryThumbnailSourceSize(Thumbnail hThumbnail, out DwmSize pSize);
+        [DllImport("dwmapi.dll")]
+        internal static extern int DwmQueryThumbnailSourceSize(Thumbnail hThumbnail, out DwmSize pSize);
 
         #endregion
 
         #region DWM Blur Behind
 
         [StructLayout(LayoutKind.Sequential)]
-        internal struct BlurBehind {
+        internal struct BlurBehind
+        {
             internal BlurBehindFlags dwFlags;
             internal bool fEnable;
             internal IntPtr hRgnBlur;
             internal bool fTransitionOnMaximized;
         }
 
-        internal enum BlurBehindFlags : int {
+        internal enum BlurBehindFlags : int
+        {
             Enable = 0x00000001,
             BlurRegion = 0x00000002,
             TransitionOnMaximized = 0x00000004
@@ -100,7 +106,8 @@ namespace WindowsFormsAero.Dwm
 
         #region Attributes
 
-        internal enum DwmWindowAttribute : int {
+        internal enum DwmWindowAttribute : int
+        {
             DWMWA_NCRENDERING_ENABLED = 1,
             DWMWA_FLIP3D_POLICY = 8,
             DWMWA_DISALLOW_PEEK = 11,
@@ -110,19 +117,22 @@ namespace WindowsFormsAero.Dwm
         [DllImport("dwmapi.dll")]
         internal static extern int DwmSetWindowAttribute(IntPtr hwnd, DwmWindowAttribute dwAttribute, ref int pvAttribute, int cbAttribute);
 
-        internal static int DwmSetWindowFlip3dPolicy(IntPtr hwnd, Flip3DPolicy policy) {
+        internal static int DwmSetWindowFlip3dPolicy(IntPtr hwnd, Flip3DPolicy policy)
+        {
             int iPolicy = (int)policy;
             return DwmSetWindowAttribute(hwnd, DwmWindowAttribute.DWMWA_FLIP3D_POLICY,
                 ref iPolicy, Marshal.SizeOf(typeof(int)));
         }
 
-        internal static int DwmSetWindowDisallowPeek(IntPtr hwnd, bool disallowPeek) {
+        internal static int DwmSetWindowDisallowPeek(IntPtr hwnd, bool disallowPeek)
+        {
             int iPrevent = (disallowPeek) ? 1 : 0;
             return DwmSetWindowAttribute(hwnd, DwmWindowAttribute.DWMWA_DISALLOW_PEEK,
                 ref iPrevent, Marshal.SizeOf(typeof(int)));
         }
 
-        internal static int DwmSetWindowExcludedFromPeek(IntPtr hwnd, bool preventPeek) {
+        internal static int DwmSetWindowExcludedFromPeek(IntPtr hwnd, bool preventPeek)
+        {
             int iPrevent = (preventPeek) ? 1 : 0;
             return DwmSetWindowAttribute(hwnd, DwmWindowAttribute.DWMWA_EXCLUDED_FROM_PEEK,
                 ref iPrevent, Marshal.SizeOf(typeof(int)));

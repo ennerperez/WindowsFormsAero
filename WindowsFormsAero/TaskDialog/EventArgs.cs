@@ -12,10 +12,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsAero.TaskDialog {
+namespace WindowsFormsAero.TaskDialog
+{
 
-    public class ClickEventArgs : EventArgs {
-        public ClickEventArgs(int buttonID) {
+    public class ClickEventArgs : EventArgs
+    {
+        public ClickEventArgs(int buttonID)
+        {
             ButtonID = buttonID;
             PreventClosing = false;
         }
@@ -24,24 +27,30 @@ namespace WindowsFormsAero.TaskDialog {
         public bool PreventClosing { get; set; }
     }
 
-    public class CheckEventArgs : EventArgs {
-        public CheckEventArgs(bool state) {
+    public class CheckEventArgs : EventArgs
+    {
+        public CheckEventArgs(bool state)
+        {
             IsChecked = state;
         }
 
         public bool IsChecked { get; set; }
     }
 
-    public class ExpandEventArgs : EventArgs {
-        public ExpandEventArgs(bool state) {
+    public class ExpandEventArgs : EventArgs
+    {
+        public ExpandEventArgs(bool state)
+        {
             IsExpanded = state;
         }
 
         public bool IsExpanded { get; set; }
     }
 
-    public class TimerEventArgs : EventArgs {
-        public TimerEventArgs(long ticks) {
+    public class TimerEventArgs : EventArgs
+    {
+        public TimerEventArgs(long ticks)
+        {
             Ticks = ticks;
             ResetCount = false;
         }
@@ -50,8 +59,10 @@ namespace WindowsFormsAero.TaskDialog {
         public bool ResetCount { get; set; }
     }
 
-    public class HyperlinkEventArgs : EventArgs {
-        public HyperlinkEventArgs(string url) {
+    public class HyperlinkEventArgs : EventArgs
+    {
+        public HyperlinkEventArgs(string url)
+        {
             Url = url;
         }
 

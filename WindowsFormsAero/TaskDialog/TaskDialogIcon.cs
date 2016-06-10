@@ -12,10 +12,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsAero.TaskDialog {
+namespace WindowsFormsAero.TaskDialog
+{
 
     /// <summary>Common Task Dialog icons. Determine the look of the main instruction.</summary>
-    public enum TaskDialogIcon : long {
+    public enum TaskDialogIcon : long
+    {
         Information = UInt16.MaxValue - 2,
         Warning = UInt16.MaxValue,
         Stop = UInt16.MaxValue - 1,

@@ -33,31 +33,31 @@ namespace WindowsFormsAero
         [DllImport("uxtheme.dll", CharSet = CharSet.Unicode)]
         internal extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);
 
-		/*[DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        /*[DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
 		internal static extern bool StopMouseCapture();
 
 		[DllImport("user32.dll", EntryPoint = "SetCapture")]
 		internal static extern IntPtr StartMouseCapture(IntPtr hWnd);*/
 
-		//Window styles
-		internal const int WS_EX_CONTROLPARENT = 0x00010000;
-		internal const int WS_EX_CLIENTEDGE = 0x00000200;
-		internal const int WS_BORDER = 0x00800000;
+        //Window styles
+        internal const int WS_EX_CONTROLPARENT = 0x00010000;
+        internal const int WS_EX_CLIENTEDGE = 0x00000200;
+        internal const int WS_BORDER = 0x00800000;
 
-		//Window NCHITTEST values
-		internal const int HTTRANSPARENT = -1;
-        
+        //Window NCHITTEST values
+        internal const int HTTRANSPARENT = -1;
+
         //Button styles
         internal const int BS_COMMANDLINK = 0x0000000E;
         internal const int BS_SPLITBUTTON = 0x0000000C;
-		internal const int BS_DEFSPLITBUTTON = 0x0000000D;
+        internal const int BS_DEFSPLITBUTTON = 0x0000000D;
         //Button messages
         internal const int BCM_SETNOTE = 0x00001609;
         internal const int BCM_SETSHIELD = 0x0000160C;
         internal const int BM_SETIMAGE = 0x00F7;
-		internal const int BCM_SETSPLITINFO = 0x1600 + 0x0007;
+        internal const int BCM_SETSPLITINFO = 0x1600 + 0x0007;
 
-		internal const int BCN_SETDROPDOWNSTATE = 0x1606;
+        internal const int BCN_SETDROPDOWNSTATE = 0x1606;
 
         internal const int ECM_FIRST = 0x1500;
         internal const int EM_SETCUEBANNER = ECM_FIRST + 1;

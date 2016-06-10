@@ -27,7 +27,7 @@ namespace VistaControlsApp
             panelTop.Top = 30;
             panelTop.Height = this.Height - 120;
             panelBottom.Top = panelTop.Bottom;
-           
+
 
         }
 

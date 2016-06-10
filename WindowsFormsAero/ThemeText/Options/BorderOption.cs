@@ -13,26 +13,30 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 
-namespace WindowsFormsAero.ThemeText.Options {
-	public class BorderOption : IThemeTextOption {
+namespace WindowsFormsAero.ThemeText.Options
+{
+    public class BorderOption : IThemeTextOption
+    {
 
-		public BorderOption(Color c, int size) {
-			BorderColor = c;
-			BorderSize = size;
-		}
+        public BorderOption(Color c, int size)
+        {
+            BorderColor = c;
+            BorderSize = size;
+        }
 
-		public Color BorderColor { get; set; }
-		public int BorderSize { get; set; }
+        public Color BorderColor { get; set; }
+        public int BorderSize { get; set; }
 
 
-		#region IThemeTextOption Members
+        #region IThemeTextOption Members
 
-		internal override void Apply(ref NativeMethods.DTTOPTS options) {
-			options.dwFlags |= NativeMethods.DTTOPSFlags.DTT_BORDERCOLOR | NativeMethods.DTTOPSFlags.DTT_BORDERSIZE;
-			options.crBorder = ColorTranslator.ToWin32(BorderColor);
-			options.iBorderSize = BorderSize;
-		}
+        internal override void Apply(ref NativeMethods.DTTOPTS options)
+        {
+            options.dwFlags |= NativeMethods.DTTOPSFlags.DTT_BORDERCOLOR | NativeMethods.DTTOPSFlags.DTT_BORDERSIZE;
+            options.crBorder = ColorTranslator.ToWin32(BorderColor);
+            options.iBorderSize = BorderSize;
+        }
 
-		#endregion
-	}
+        #endregion
+    }
 }

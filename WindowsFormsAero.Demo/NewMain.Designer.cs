@@ -232,8 +232,8 @@ namespace VistaControlsApp
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -843,44 +843,44 @@ namespace VistaControlsApp
 
         #endregion
 
-		private System.Windows.Forms.ImageList imageList1;
-		private WindowsFormsAero.ThemeText.ThemedLabel themedLabel1;
-		private WindowsFormsAero.ThemeText.ThemedLabel themedLabel2;
-		private WindowsFormsAero.SearchTextBox searchTextBox1;
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ImageList imageList1;
+        private WindowsFormsAero.ThemeText.ThemedLabel themedLabel1;
+        private WindowsFormsAero.ThemeText.ThemedLabel themedLabel2;
+        private WindowsFormsAero.SearchTextBox searchTextBox1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-		private System.Windows.Forms.ContextMenu contextMenu1;
-		private System.Windows.Forms.MenuItem menuItem1;
-		private System.Windows.Forms.MenuItem menuItem2;
-		private System.Windows.Forms.MenuItem menuItem3;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-		private WindowsFormsAero.ProgressBar progressBar1;
-		private WindowsFormsAero.ProgressBar progressBar2;
-		private WindowsFormsAero.ProgressBar progressBar3;
-		private WindowsFormsAero.ProgressBar progressBar4;
-		private System.Windows.Forms.TabPage tabPage4;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-		private WindowsFormsAero.TextBox textBox1;
-		private WindowsFormsAero.ComboBox comboBox1;
-		private WindowsFormsAero.SearchTextBox searchTextBox2;
-		private WindowsFormsAero.TreeView treeView1;
-		private WindowsFormsAero.ListView listView1;
-		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button11;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button8;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.Button button7;
-		private System.Windows.Forms.Button button10;
-		private System.Windows.Forms.Button button9;
-		private System.Windows.Forms.TabPage tabPage5;
-		private WindowsFormsAero.TextBox textBox2;
-		private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.ContextMenu contextMenu1;
+        private System.Windows.Forms.MenuItem menuItem1;
+        private System.Windows.Forms.MenuItem menuItem2;
+        private System.Windows.Forms.MenuItem menuItem3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private WindowsFormsAero.ProgressBar progressBar1;
+        private WindowsFormsAero.ProgressBar progressBar2;
+        private WindowsFormsAero.ProgressBar progressBar3;
+        private WindowsFormsAero.ProgressBar progressBar4;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private WindowsFormsAero.TextBox textBox1;
+        private WindowsFormsAero.ComboBox comboBox1;
+        private WindowsFormsAero.SearchTextBox searchTextBox2;
+        private WindowsFormsAero.TreeView treeView1;
+        private WindowsFormsAero.ListView listView1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TabPage tabPage5;
+        private WindowsFormsAero.TextBox textBox2;
+        private System.Windows.Forms.ImageList imageList2;
         private WindowsFormsAero.Dwm.ThumbnailViewer thumbnailViewer1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private WindowsFormsAero.Button button1;

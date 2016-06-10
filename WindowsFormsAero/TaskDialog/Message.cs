@@ -13,13 +13,16 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace WindowsFormsAero.TaskDialog {
+namespace WindowsFormsAero.TaskDialog
+{
 
     /// <summary>Stores a Task Dialog message that will be sent to a dialog in order to update its state.</summary>
-    internal class Message : IDisposable {
-        
+    internal class Message : IDisposable
+    {
+
         /// <summary>Text values that can be updated.</summary>
-        public enum DialogElements : int {
+        public enum DialogElements : int
+        {
             TDE_CONTENT,
             TDE_EXPANDED_INFORMATION,
             TDE_FOOTER,
@@ -27,35 +30,40 @@ namespace WindowsFormsAero.TaskDialog {
         }
 
         /// <summary>Simple int, int message.</summary>
-        public Message(NativeMethods.TaskDialogMessages msg, int w, int l) {
+        public Message(NativeMethods.TaskDialogMessages msg, int w, int l)
+        {
             MessageType = msg;
             wParam = w;
             lParam = l;
         }
 
         /// <summary>Simple int, bool message.</summary>
-        public Message(NativeMethods.TaskDialogMessages msg, int w, bool l) {
+        public Message(NativeMethods.TaskDialogMessages msg, int w, bool l)
+        {
             MessageType = msg;
             wParam = w;
             lParam = (l) ? 1 : 0;
         }
 
         /// <summary>Simple bool, bool message.</summary>
-        public Message(NativeMethods.TaskDialogMessages msg, bool w, bool l) {
+        public Message(NativeMethods.TaskDialogMessages msg, bool w, bool l)
+        {
             MessageType = msg;
             wParam = (w) ? 1 : 0;
             lParam = (l) ? 1 : 0;
         }
 
-		/// <summary>Simple bool, int message.</summary>
-		public Message(NativeMethods.TaskDialogMessages msg, bool w, int l) {
-			MessageType = msg;
-			wParam = (w) ? 1 : 0;
-			lParam = l;
-		}
+        /// <summary>Simple bool, int message.</summary>
+        public Message(NativeMethods.TaskDialogMessages msg, bool w, int l)
+        {
+            MessageType = msg;
+            wParam = (w) ? 1 : 0;
+            lParam = l;
+        }
 
         /// <summary>Simple int, long (hi word and lo word) message.</summary>
-        public Message(NativeMethods.TaskDialogMessages msg, int w, int l_hi, int l_lo) {
+        public Message(NativeMethods.TaskDialogMessages msg, int w, int l_hi, int l_lo)
+        {
             MessageType = msg;
             wParam = w;
             lParam = (l_lo << 16) + l_hi;
@@ -63,7 +71,8 @@ namespace WindowsFormsAero.TaskDialog {
 
         /// <summary>Text updating message.</summary>
 		/// <remarks>The string will be marshaled: the Message must be correctly disposed after use.</remarks>
-        public Message(NativeMethods.TaskDialogMessages msg, DialogElements element, string s) {
+        public Message(NativeMethods.TaskDialogMessages msg, DialogElements element, string s)
+        {
             MessageType = msg;
             wParam = (int)element;
 
@@ -71,9 +80,10 @@ namespace WindowsFormsAero.TaskDialog {
             lParam = (int)_unsafeHandle;
         }
 
-		/// <summary>Navigation message.</summary>
-		/// <remarks>The config structure will be marshaled: must be correctly disposed after use.</remarks>
-        public Message(NativeMethods.TaskDialogMessages msg, int w, NativeMethods.TaskDialogConfig config) {
+        /// <summary>Navigation message.</summary>
+        /// <remarks>The config structure will be marshaled: must be correctly disposed after use.</remarks>
+        public Message(NativeMethods.TaskDialogMessages msg, int w, NativeMethods.TaskDialogConfig config)
+        {
             MessageType = msg;
             wParam = w;
 
@@ -93,7 +103,8 @@ namespace WindowsFormsAero.TaskDialog {
 
         #region IDisposable Members
 
-        public void Dispose() {
+        public void Dispose()
+        {
             if (_unsafeHandle != IntPtr.Zero)
                 Marshal.FreeHGlobal(_unsafeHandle);
         }

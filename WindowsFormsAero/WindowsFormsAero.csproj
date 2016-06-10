@@ -98,8 +98,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ExceptionMessages.Designer.cs" />
-    <Compile Include="Resources\Pictures.Designer.cs" />
+    <Compile Include="Resources\ExceptionMessages.Designer.cs">
+      <DependentUpon>ExceptionMessages.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SearchTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -108,6 +109,9 @@
     </Compile>
     <Compile Include="Controls\SplitButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Pictures.Designer.cs">
+      <DependentUpon>Pictures.resx</DependentUpon>
     </Compile>
     <Compile Include="TaskDialog\CustomButton.cs" />
     <Compile Include="TaskDialog\EventArgs.cs" />
@@ -142,11 +146,8 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Package.nuspec" />
-    <None Include="Resources\ThemedLabel.pdn" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\active_search.png" />
-    <Content Include="Resources\inactive_search.png" />
     <Content Include="Resources\ThemedLabel.bmp" />
     <Content Include="Resources\ThemedLabel.png" />
   </ItemGroup>

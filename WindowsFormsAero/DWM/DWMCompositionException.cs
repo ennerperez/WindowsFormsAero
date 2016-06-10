@@ -19,15 +19,18 @@ namespace WindowsFormsAero.Dwm
     class DwmCompositionException : Exception
     {
         public DwmCompositionException(string m)
-            : base(m) {
+            : base(m)
+        {
         }
 
         public DwmCompositionException(string m, Exception innerException)
-            : base(m, innerException) {
+            : base(m, innerException)
+        {
         }
 
         public DwmCompositionException(SerializationInfo info, StreamingContext context)
-            : base(info, context) {
+            : base(info, context)
+        {
         }
     }
 }
