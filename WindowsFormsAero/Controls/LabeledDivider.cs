@@ -26,7 +26,8 @@ namespace WindowsFormsAero
     /// The labeled divider provides a Aero styled divider with an optional caption,
     /// similiar to what is seen in the Control Panel dialogs of Windows 7 and Vista.
     /// </summary>
-    public class LabeledDivider : Label {
+    public class LabeledDivider : Label
+    {
         /// <summary>
         /// Constructor
         /// </summary>
@@ -55,16 +56,17 @@ namespace WindowsFormsAero
 
             // Draw the caption string, then get the size of it as it appears on the screen so
             // we know where to put the caption.
-            e.Graphics.DrawString(this.Text, this.Font, Brushes.Black, ClientRectangle.X, ClientRectangle.Y);
+            e.Graphics.DrawString(this.Text, this.Font, sbForeColor, Convert.ToSingle(base.ClientRectangle.X), Convert.ToSingle(base.ClientRectangle.Y));
+            //e.Graphics.DrawString(this.Text, this.Font, Brushes.Black, ClientRectangle.X, ClientRectangle.Y);
             SizeF sf = e.Graphics.MeasureString(this.Text, this.Font);
 
-            // This didn't quiet get in the cente rso I had to add 1 pixel to the sf.Height / 2
+            // This didn't quiet get in the center so I had to add 1 pixel to the sf.Height / 2
             if (this.DividerPosition == DividerPositions.Center)
             {
-                Rectangle rect = new Rectangle((int)sf.Width, ((int)sf.Height / 2) + 1, this.Width - (int)sf.Width, 1);            
+                Rectangle rect = new Rectangle((int)sf.Width, ((int)sf.Height / 2) + 1, this.Width - (int)sf.Width, 1);
                 e.Graphics.FillRectangle(sbDividerColor, rect);
             }
-            else if (this.DividerPosition == DividerPositions.Below) 
+            else if (this.DividerPosition == DividerPositions.Below)
             {
                 Rectangle rect = new Rectangle(1, (int)sf.Height, this.Width, 1);
                 e.Graphics.FillRectangle(sbDividerColor, rect);
@@ -77,16 +79,16 @@ namespace WindowsFormsAero
         /// <summary>
         /// The positions that the divider line can be drawn in
         /// </summary>
-        public enum DividerPositions 
-        { 
+        public enum DividerPositions
+        {
             /// <summary>
             /// The divider will be centered after the text caption and will begin drawing after the string.  This is the default behavior.
             /// </summary>
-            Center, 
+            Center,
             /// <summary>
             /// The divider will be drawn below the text caption.
             /// </summary>
-            Below 
+            Below
         };
 
         private DividerPositions _dividerPosition = DividerPositions.Center;
@@ -138,7 +140,7 @@ namespace WindowsFormsAero
         /// <remarks>
         /// After a change is made to the text property we want to invalidate the control so it triggers a new paint message being sent.
         /// </remarks>
-        [Description("The text that will display as the caption."), Category("Appearance"),DefaultValue("DividerLabel")]
+        [Description("The text that will display as the caption."), Category("Appearance"), DefaultValue("DividerLabel")]
         public override string Text
         {
             get
@@ -151,6 +153,38 @@ namespace WindowsFormsAero
                 this.Invalidate();
             }
         }
+
+        #region Enhancements
+
+        private bool _LocalAutoSize = false;
+        [DefaultValue(false)]
+        [Localizable(true)]
+        public override bool AutoSize
+        {
+            get
+            {
+                return _LocalAutoSize;
+            }
+            set
+            {
+                _LocalAutoSize = value;
+                this.Invalidate();
+            }
+        }
+        
+        [Category("Appearance")]
+        [Localizable(true)]
+        public new Color ForeColor
+        {
+            get { return base.ForeColor; }
+            set
+            {
+                base.ForeColor = value;
+                base.Invalidate();
+            }
+        }
+
+        #endregion
 
     }
 }
