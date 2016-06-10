@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata minClientVersion="2.8.1">
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>Enner Pérez</owners>
+    <licenseUrl>http://windowsformsaero.codeplex.com/license</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/ennerperez/WindowsFormsAero/master/.editoricon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Provides controls reproducing the appearance of Microsoft Aero graphic objects, like buttons and links with shield icon, textboxes with cue banner, etc.</description>
+    <summary>$description$</summary>
+    <releaseNotes>
+      The current version contains several native Vista controls (such as Buttons, Combo boxes with cue banner, Command links, native List views, Progress bars, explorer-like TreeView...) and some modules that empower the user to exploit some of Vista's advanced GUI features (Glass sheet effect, text on glass, live thumbnails and the new Task dialogs).
+    </releaseNotes>
+    <copyright>$copyright$</copyright>
+    <language>en</language>
+    <tags>WinForms Microsoft Aero Windows Control Library</tags>
+    <dependencies />
+  </metadata>
+  <files />
+</package>
