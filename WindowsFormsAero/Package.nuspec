@@ -6,8 +6,8 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>Enner Pérez</owners>
-    <licenseUrl>http://www.codeproject.com/info/cpol10.aspx</licenseUrl>
-    <iconUrl>https://raw.githubusercontent.com/ennerperez/alphagradientpanel/master/.editoricon.png</iconUrl>
+    <licenseUrl>http://windowsformsaero.codeplex.com/license</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/ennerperez/WindowsFormsAero/master/.editoricon.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Provides controls reproducing the appearance of Microsoft Aero graphic objects, like buttons and links with shield icon, textboxes with cue banner, etc.</description>
     <summary>$description$</summary>
