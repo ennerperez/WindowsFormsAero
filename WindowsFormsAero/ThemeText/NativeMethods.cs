@@ -20,28 +20,28 @@ namespace WindowsFormsAero.ThemeText {
 		#region DWM Text drawing
 
 		[DllImport("uxtheme.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-		public static extern int DrawThemeTextEx(IntPtr hTheme, IntPtr hdc, int iPartId, int iStateId, string text, int iCharCount, int dwFlags, ref Native.RECT pRect, ref DTTOPTS pOptions);
+		internal static extern int DrawThemeTextEx(IntPtr hTheme, IntPtr hdc, int iPartId, int iStateId, string text, int iCharCount, int dwFlags, ref Native.RECT pRect, ref DTTOPTS pOptions);
 
 		[StructLayout(LayoutKind.Sequential)]
-		public struct DTTOPTS {
-			public int dwSize;
-			public DTTOPSFlags dwFlags;
-			public int crText;
-			public int crBorder;
-			public int crShadow;
-			public int iTextShadowType;
-			public Native.POINT ptShadowOffset;
-			public int iBorderSize;
-			public int iFontPropId;
-			public int iColorPropId;
-			public int iStateId;
-			public bool fApplyOverlay;
-			public int iGlowSize;
-			public int pfnDrawTextCallback;
-			public IntPtr lParam;
+		internal struct DTTOPTS {
+			internal int dwSize;
+			internal DTTOPSFlags dwFlags;
+			internal int crText;
+			internal int crBorder;
+			internal int crShadow;
+			internal int iTextShadowType;
+			internal Native.POINT ptShadowOffset;
+			internal int iBorderSize;
+			internal int iFontPropId;
+			internal int iColorPropId;
+			internal int iStateId;
+			internal bool fApplyOverlay;
+			internal int iGlowSize;
+			internal int pfnDrawTextCallback;
+			internal IntPtr lParam;
 		}
 
-		public enum DTTOPSFlags : int {
+		internal enum DTTOPSFlags : int {
 			DTT_TEXTCOLOR = 1,
 			DTT_BORDERCOLOR = 2,
 			DTT_SHADOWCOLOR = 4,
@@ -58,7 +58,7 @@ namespace WindowsFormsAero.ThemeText {
 			DTT_COMPOSITED = 8192			
 		}
 
-		public enum TextShadowType : int {
+		internal enum TextShadowType : int {
 			TST_NONE = 0,
 			TST_SINGLE = 1,
 			TST_CONTINUOUS = 2

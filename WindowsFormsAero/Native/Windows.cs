@@ -18,10 +18,10 @@ namespace WindowsFormsAero.Native {
 
 		/// <summary>Returns the active windows on the current thread.</summary>
 		[DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-		public static extern IntPtr GetActiveWindow();
+		internal static extern IntPtr GetActiveWindow();
 
 		[DllImport("user32.dll", CharSet = CharSet.Auto)]
-		public static extern bool GetWindowRect(IntPtr hwnd, out RECT rect);
+		internal static extern bool GetWindowRect(IntPtr hwnd, out RECT rect);
 
 	}
 }

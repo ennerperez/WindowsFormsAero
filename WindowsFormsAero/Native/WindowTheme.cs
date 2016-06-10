@@ -14,21 +14,21 @@ namespace WindowsFormsAero.Native {
 
     [StructLayout(LayoutKind.Sequential)]
     internal struct WTA_OPTIONS {
-        public WindowThemeNonClientAttributes Flags;
-        public WindowThemeNonClientAttributes Mask;
+        internal WindowThemeNonClientAttributes Flags;
+        internal WindowThemeNonClientAttributes Mask;
     }
 
     internal static class WindowTheme {
 
-        public enum WindowThemeAttributeType : int {
+        internal enum WindowThemeAttributeType : int {
             WTA_NONCLIENT = 1
         }
 
         [DllImport("uxtheme.dll")]
-        public static extern int SetWindowThemeAttribute(IntPtr hWnd,
+        internal static extern int SetWindowThemeAttribute(IntPtr hWnd,
             WindowThemeAttributeType wtype, ref WTA_OPTIONS attributes, uint size);
 
-        public static int SetWindowThemeNonClientAttributes(IntPtr hwnd,
+        internal static int SetWindowThemeNonClientAttributes(IntPtr hwnd,
             WindowThemeNonClientAttributes mask, WindowThemeNonClientAttributes attributes) {
 
             var opt = new WTA_OPTIONS {
@@ -40,8 +40,8 @@ namespace WindowsFormsAero.Native {
         }
        
 
-        /*public const uint WTNCA_NODRAWCAPTION = 0x00000001;
-        public const uint WTNCA_NODRAWICON = 0x00000002;*/
+        /*internal const uint WTNCA_NODRAWCAPTION = 0x00000001;
+        internal const uint WTNCA_NODRAWICON = 0x00000002;*/
 
 /*WTA_OPTIONS wta = new WTA_OPTIONS() { Flags = WTNCA_NODRAWCAPTION | WTNCA_NODRAWICON, Mask = WTNCA_NODRAWCAPTION | WTNCA_NODRAWICON };
 

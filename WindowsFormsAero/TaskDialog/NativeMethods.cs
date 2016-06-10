@@ -19,13 +19,13 @@ namespace WindowsFormsAero.TaskDialog {
 
         /// <summary>Direct Task Dialog call.</summary>
         [DllImport("comctl32.dll", CharSet = CharSet.Unicode, EntryPoint = "TaskDialog")]
-        public static extern int TaskDialog(IntPtr hWndParent, IntPtr hInstance,
+        internal static extern int TaskDialog(IntPtr hWndParent, IntPtr hInstance,
             string pszWindowTitle, string pszMainInstruction, string pszContent,
             int dwCommonButtons, IntPtr pszIcon, out int pnButton);
 
         /// <summary>Indirect Task Dialog call. Allows complex dialogs with interaction logic (via callback).</summary>
         [DllImport("comctl32.dll", CharSet = CharSet.Unicode, PreserveSig=false)]
-        public static extern IntPtr TaskDialogIndirect(ref TaskDialogConfig pTaskConfig,
+        internal static extern IntPtr TaskDialogIndirect(ref TaskDialogConfig pTaskConfig,
             out int pnButton, out int pnRadioButton, out bool pfVerificationFlagChecked);
 
         internal delegate IntPtr TaskDialogCallback(IntPtr hwnd, uint msg, UIntPtr wParam, IntPtr lParam, IntPtr refData);
@@ -33,38 +33,38 @@ namespace WindowsFormsAero.TaskDialog {
         /// <summary>The Task Dialog config structure.</summary>
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode, Pack = 1)]
         internal struct TaskDialogConfig {
-            public uint cbSize;
-            public IntPtr hwndParent;
-            public IntPtr hInstance;
-            public TaskDialogFlags dwFlags;
-            public TaskDialogButton dwCommonButtons;
+            internal uint cbSize;
+            internal IntPtr hwndParent;
+            internal IntPtr hInstance;
+            internal TaskDialogFlags dwFlags;
+            internal TaskDialogButton dwCommonButtons;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszWindowTitle;
-            public IntPtr hMainIcon;
+            internal string pszWindowTitle;
+            internal IntPtr hMainIcon;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszMainInstruction;
+            internal string pszMainInstruction;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszContent;
-            public uint cButtons;
-            public IntPtr pButtons;
-            public int nDefaultButton;
-            public uint cRadioButtons;
-            public IntPtr pRadioButtons;
-            public int nDefaultRadioButton;
+            internal string pszContent;
+            internal uint cButtons;
+            internal IntPtr pButtons;
+            internal int nDefaultButton;
+            internal uint cRadioButtons;
+            internal IntPtr pRadioButtons;
+            internal int nDefaultRadioButton;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszVerificationText;
+            internal string pszVerificationText;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszExpandedInformation;
+            internal string pszExpandedInformation;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszExpandedControlText;
+            internal string pszExpandedControlText;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszCollapsedControlText;
-            public IntPtr hFooterIcon;
+            internal string pszCollapsedControlText;
+            internal IntPtr hFooterIcon;
             [MarshalAs(UnmanagedType.LPWStr)]
-            public string pszFooter;
-            public TaskDialogCallback pfCallback;
-            public IntPtr lpCallbackData;
-            public uint cxWidth;
+            internal string pszFooter;
+            internal TaskDialogCallback pfCallback;
+            internal IntPtr lpCallbackData;
+            internal uint cxWidth;
         }
 
         /// <summary>Flags used in TaskDialogConfig struct.</summary>
@@ -91,7 +91,7 @@ namespace WindowsFormsAero.TaskDialog {
 
         /// <summary>Notifications returned by Task Dialogs to the callback.</summary>
         /// <remarks>From CommCtrl.h.</remarks>
-        public enum TaskDialogNotification : uint {
+        internal enum TaskDialogNotification : uint {
             TDN_CREATED = 0,
             TDN_NAVIGATED = 1,
             TDN_BUTTON_CLICKED = 2,            // wParam = Button ID
@@ -107,7 +107,7 @@ namespace WindowsFormsAero.TaskDialog {
 
         /// <summary>Messages that can be sent to Task Dialogs.</summary>
         /// <remarks>From CommCtrl.h.</remarks>
-        public enum TaskDialogMessages : uint {
+        internal enum TaskDialogMessages : uint {
             TDM_NAVIGATE_PAGE = 0x0400 + 101,
             TDM_CLICK_BUTTON = 0x0400 + 102, // wParam = Button ID
             TDM_SET_MARQUEE_PROGRESS_BAR = 0x0400 + 103, // wParam = 0 (nonMarque) wParam != 0 (Marquee)

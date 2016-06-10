@@ -16,22 +16,22 @@ using System.Runtime.InteropServices;
 namespace WindowsFormsAero.Native {
 
 	[StructLayout(LayoutKind.Sequential)]
-	public struct POINT {
-		public POINT(int x, int y) {
+	internal struct POINT {
+		internal POINT(int x, int y) {
 			X = x;
 			Y = y;
 		}
-		public POINT(System.Drawing.Point p) {
+		internal POINT(System.Drawing.Point p) {
 			X = p.X;
 			Y = p.Y;
 		}
-		public POINT(System.Drawing.PointF p) {
+		internal POINT(System.Drawing.PointF p) {
 			X = (int)p.X;
 			Y = (int)p.Y;
 		}
 
-		public int X;
-		public int Y;
+		internal int X;
+		internal int Y;
 	}
 
 }

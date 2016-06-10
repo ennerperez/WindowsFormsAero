@@ -19,15 +19,15 @@ namespace WindowsFormsAero.Native {
 		#region DC and Blitting
 
 		[DllImport("gdi32.dll", ExactSpelling = true)]
-		public static extern IntPtr CreateCompatibleDC(IntPtr hDC);
+		internal static extern IntPtr CreateCompatibleDC(IntPtr hDC);
 
 		[DllImport("gdi32.dll", ExactSpelling = true, SetLastError = true)]
-		public static extern bool DeleteDC(IntPtr hdc);
+		internal static extern bool DeleteDC(IntPtr hdc);
 
 		[DllImport("gdi32.dll")]
-		public static extern bool BitBlt(IntPtr hdc, int nXDest, int nYDest, int nWidth, int nHeight, IntPtr hdcSrc, int nXSrc, int nYSrc, BitBltOp dwRop);
+		internal static extern bool BitBlt(IntPtr hdc, int nXDest, int nYDest, int nWidth, int nHeight, IntPtr hdcSrc, int nXSrc, int nYSrc, BitBltOp dwRop);
 
-		public enum BitBltOp : uint {
+		internal enum BitBltOp : uint {
 			SRCCOPY = 0x00CC0020,		/* dest = source                   */
 			SRCPAINT = 0x00EE0086,		/* dest = source OR dest           */
 			SRCAND = 0x008800C6,		/* dest = source AND dest          */
@@ -49,20 +49,20 @@ namespace WindowsFormsAero.Native {
 		}
 
 		[DllImport("user32.dll")]
-		public static extern int FillRect(IntPtr hDC, [In] ref Native.RECT lprc, IntPtr hbr);
+		internal static extern int FillRect(IntPtr hDC, [In] ref Native.RECT lprc, IntPtr hbr);
 
 		[DllImport("gdi32.dll")]
-		public static extern IntPtr CreateSolidBrush(int crColor);
+		internal static extern IntPtr CreateSolidBrush(int crColor);
 
 		#endregion
 
 		#region GDI Object handling
 
 		[DllImport("gdi32.dll", ExactSpelling = true)]
-		public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
+		internal static extern IntPtr SelectObject(IntPtr hDC, IntPtr hObject);
 
 		[DllImport("gdi32.dll", ExactSpelling = true)]
-		public static extern bool DeleteObject(IntPtr hObject);
+		internal static extern bool DeleteObject(IntPtr hObject);
 
 		#endregion
 

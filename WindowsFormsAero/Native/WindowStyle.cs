@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 namespace WindowsFormsAero.Native {
 	internal static class WindowStyle {
 
-		public enum WindowLong {
+		internal enum WindowLong {
 			WndProc = (-4),
 			HInstance = (-6),
 			HwndParent = (-8),
@@ -26,13 +26,13 @@ namespace WindowsFormsAero.Native {
 			Id = (-12)
 		}
 
-		public enum ClassLong {
+		internal enum ClassLong {
 			Icon = -14,
 			IconSmall = -34
 		}
 
 		[Flags]
-		public enum WindowStyles : long {
+		internal enum WindowStyles : long {
 			None = 0,
 			Disabled = 0x8000000L,
 			Minimize = 0x20000000L,
@@ -41,7 +41,7 @@ namespace WindowsFormsAero.Native {
 		}
 
 		[Flags]
-		public enum WindowExStyles : long {
+		internal enum WindowExStyles : long {
 			AppWindow = 0x40000,
 			Layered = 0x80000,
 			NoActivate = 0x8000000L,
@@ -50,7 +50,7 @@ namespace WindowsFormsAero.Native {
 			Transparent = 0x20
 		}
 
-		public static IntPtr GetWindowLong(IntPtr hWnd, WindowLong i) {
+		internal static IntPtr GetWindowLong(IntPtr hWnd, WindowLong i) {
 			if (IntPtr.Size == 8) {
 				return GetWindowLongPtr64(hWnd, (int)i);
 			}
@@ -66,7 +66,7 @@ namespace WindowsFormsAero.Native {
 		private static extern IntPtr GetWindowLongPtr64(IntPtr hWnd, int nIndex);
 
 
-		public static IntPtr GetClassLongPtr(IntPtr hWnd, ClassLong i) {
+		internal static IntPtr GetClassLongPtr(IntPtr hWnd, ClassLong i) {
 			if (IntPtr.Size == 8) {
 				return GetClassLong64(hWnd, (int)i);
 			}

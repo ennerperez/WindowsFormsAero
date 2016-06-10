@@ -16,27 +16,27 @@ using System.Runtime.InteropServices;
 namespace WindowsFormsAero.Native {
 
 	[StructLayout(LayoutKind.Sequential)]
-	public struct RECT {
-		public RECT(int left, int top, int right, int bottom) {
+	internal struct RECT {
+		internal RECT(int left, int top, int right, int bottom) {
 			Left = left;
 			Top = top;
 			Right = right;
 			Bottom = bottom;
 		}
 
-		public RECT(System.Drawing.Rectangle rect) {
+		internal RECT(System.Drawing.Rectangle rect) {
 			Left = rect.X;
 			Top = rect.Y;
 			Right = rect.Right;
 			Bottom = rect.Bottom;
 		}
 
-		public int Left;
-		public int Top;
-		public int Right;
-		public int Bottom;
+		internal int Left;
+		internal int Top;
+		internal int Right;
+		internal int Bottom;
 
-		public int Width {
+		internal int Width {
 			get {
 				return Right - Left;
 			}
@@ -44,7 +44,7 @@ namespace WindowsFormsAero.Native {
 				Right = Left + value;
 			}
 		}
-		public int Height {
+		internal int Height {
 			get {
 				return Bottom - Top;
 			}
@@ -53,7 +53,7 @@ namespace WindowsFormsAero.Native {
 			}
 		}
 
-		public System.Drawing.Rectangle ToRectangle() {
+		internal System.Drawing.Rectangle ToRectangle() {
 			return new System.Drawing.Rectangle(Left, Top, Right - Left, Bottom - Top);
 		}
 
