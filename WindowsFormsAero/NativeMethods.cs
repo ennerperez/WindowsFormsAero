@@ -20,6 +20,8 @@ namespace WindowsFormsAero
     {
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
         internal static extern int SendMessage(IntPtr hWnd, UInt32 Msg, int wParam, int lParam);
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        internal static extern int SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern IntPtr SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]

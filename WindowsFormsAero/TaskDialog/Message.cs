@@ -33,40 +33,40 @@ namespace WindowsFormsAero.TaskDialog
         public Message(NativeMethods.TaskDialogMessages msg, int w, int l)
         {
             MessageType = msg;
-            wParam = w;
-            lParam = l;
+            wParam = (IntPtr)w;
+            lParam = (IntPtr)l;
         }
 
         /// <summary>Simple int, bool message.</summary>
         public Message(NativeMethods.TaskDialogMessages msg, int w, bool l)
         {
             MessageType = msg;
-            wParam = w;
-            lParam = (l) ? 1 : 0;
+            wParam = (IntPtr)w;
+            lParam = (IntPtr)((l) ? 1 : 0);
         }
 
         /// <summary>Simple bool, bool message.</summary>
         public Message(NativeMethods.TaskDialogMessages msg, bool w, bool l)
         {
             MessageType = msg;
-            wParam = (w) ? 1 : 0;
-            lParam = (l) ? 1 : 0;
+            wParam = (IntPtr)((w) ? 1 : 0);
+            lParam = (IntPtr)((l) ? 1 : 0);
         }
 
         /// <summary>Simple bool, int message.</summary>
         public Message(NativeMethods.TaskDialogMessages msg, bool w, int l)
         {
             MessageType = msg;
-            wParam = (w) ? 1 : 0;
-            lParam = l;
+            wParam = (IntPtr)((w) ? 1 : 0);
+            lParam = (IntPtr)l;
         }
 
         /// <summary>Simple int, long (hi word and lo word) message.</summary>
         public Message(NativeMethods.TaskDialogMessages msg, int w, int l_hi, int l_lo)
         {
             MessageType = msg;
-            wParam = w;
-            lParam = (l_lo << 16) + l_hi;
+            wParam = (IntPtr)w;
+            lParam = (IntPtr)(l_lo << 16) + l_hi;
         }
 
         /// <summary>Text updating message.</summary>
@@ -74,10 +74,10 @@ namespace WindowsFormsAero.TaskDialog
         public Message(NativeMethods.TaskDialogMessages msg, DialogElements element, string s)
         {
             MessageType = msg;
-            wParam = (int)element;
+            wParam = (IntPtr)element;
 
             _unsafeHandle = Marshal.StringToHGlobalUni(s);
-            lParam = (int)_unsafeHandle;
+            lParam = (IntPtr)_unsafeHandle;
         }
 
         /// <summary>Navigation message.</summary>
@@ -85,20 +85,20 @@ namespace WindowsFormsAero.TaskDialog
         public Message(NativeMethods.TaskDialogMessages msg, int w, NativeMethods.TaskDialogConfig config)
         {
             MessageType = msg;
-            wParam = w;
+            wParam = (IntPtr)w;
 
             _unsafeHandle = Marshal.AllocHGlobal(Marshal.SizeOf(config));
             Marshal.StructureToPtr(config, _unsafeHandle, false);
-            lParam = (int)_unsafeHandle;
+            lParam = (IntPtr)_unsafeHandle;
         }
 
         IntPtr _unsafeHandle = IntPtr.Zero;
 
         public NativeMethods.TaskDialogMessages MessageType { get; set; }
 
-        public int wParam { get; set; }
+        public IntPtr wParam { get; set; }
 
-        public int lParam { get; set; }
+        public IntPtr lParam { get; set; }
 
 
         #region IDisposable Members
